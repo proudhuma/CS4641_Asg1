@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+%\usepackage{psfig}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb,amsthm,listings,hyperref}
+\usepackage{tikz}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+
+\title{CS 4641 Project 1 Report}
+\author{HU Heng}
+\date{February 7, 2019}
+\begin{document}
+\maketitle
+\section{Overview}
+This report is for CS 4641 Machine Learning project 1 supervised learning. In the following pages, you will see analysis of five different learning algorithms. I will show the results by some figures which is about the performance of each algorithm on different hyperparameters. I will first introduce the datasets I used in my experiences. Then the five algorithms and the corresponding results will be described and analyzed. Finally, I will show how the size of training dataset influences the classification result.
+
+\section{Datasets}
+The datasets I choose include wine dataset and adult dataset. I will introduce these two datasets and explain the reason why I choose these two datasets in detail.
+
+\subsection{Adult Dataset}
+Adult dataset is extracted from the 1994 Census database. There are 14 attributes and the result is whether the income is greater than \$50k or not. It is a binary classification problem and there are 48842 instances in total. I believe there should be enough data to train a good model using different algorithms. In addition, binary classification problem is not complicated and it would be suitable for training. The training result should be reasonably good.
+
+\subsection{Wine Dataset}
+Wine data are the results of a chemical analysis of wines grown in the same region in Italy but derived from three different cultivars. There are 13 dimensions and three possible classes. There are 178 instances in total. Previously, working on adult dataset is a binary classification task and there are more than 10k training data. I would like to move from binary classification problem to multi-class classfication problem. In addition, I am not sure whether 178 instances are large enough for classification. So I would like to do classification on this dataset and see the preformance of different algorithms.
+
+\section{Adult Dataset Classification and Result}
+\subsection{K Nearest Neighbor}
+\subsection{Decision Tree}
+\subsection{Boosting}
+\subsection{Support Vector Machine}
+\subsection{Neural Network}
+\subsection{Summary}
+
+\section{Wine Dataset Classification and Result}
+\subsection{K Nearest Neighbor}
+\subsection{Decision Tree}
+\subsection{Boosting}
+\subsection{Support Vector Machine}
+\subsection{Neural Network}
+\subsection{Summary}
+
+
+\section{Influence of Size}
+
+%\begin{figure}
+%  \includegraphics[width=\linewidth]{runtime_N.png}
+%  \caption{Different N with same P}
+%  \label{diff_n}
+%\end{figure}
+
+
+\end{document}
