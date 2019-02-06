@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 %\usepackage{psfig}
+\usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{amsmath,amssymb,amsthm,listings,hyperref}
 \usepackage{tikz}
@@ -25,28 +26,115 @@ Wine data are the results of a chemical analysis of wines grown in the same regi
 
 \section{Adult Dataset Classification and Result}
 \subsection{K Nearest Neighbor}
-\subsection{Decision Tree}
-\subsection{Boosting}
-\subsection{Support Vector Machine}
-\subsection{Neural Network}
-\subsection{Summary}
+For k nearest neighbor algorithm, the hyperparameter is the value k. Fig.\ref{fig:adult_knn} shows the accuracy with different k. We can see clearly from the figure that the training accuracy goes down rapidly at beginning and the validation accuracy increases as k becomes larger. When k is at around 20, the accuracy of both training set and validation set become stable. 
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./adult/knn_k.jpg}
+  \caption{Accuracy with Different K}
+  \label{fig:adult_knn}
+\end{figure}
+We may conclude that when k is small, overfitting may happen since there is a large gap between training accuracy and validation accuracy. This is reasonable because if we only look at a small number of neighbors, there would be a higher error probability.\\
+\\
+For the selection of hyperparameter k, we may conclude that k=19 is good and the model achieves 79.63\% accuracy in testing dataset.
 
+\subsection{Decision Tree}
+For decision tree algorithm, the hyperparameters include max number of leaves, max depth, etc. Here I test on different choose of max number of leaves and I use information gain for the criterion. From Fig.\ref{fig:adult_dt}, we can see clearly that the accuracy raise up rapidly first when leaf number is very small. Then the accuracy raise up slowly. After the number of leaves is greater than 20, the accuracy almost does not change. This makes sense because when a decision tree can be fully produced, there is no use to increase the maximal number of leaves.
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./adult/dt_maxleaf.jpg}
+  \caption{Accuracy with Different Number of Max Leaves}
+  \label{fig:adult_dt}
+\end{figure}
+We may conclude that when the maximal number of leaves is so small, increasing the maximal number can make the performance of the algorithm much better while when k becomes larger, the increase of the accuracy is not that obvious. I believe there is a trade-off between the complexity of the decision tree and the accuracy. If one want his decision tree to reach as higher accuracy as possible, he may choose to have no limitation on maximal number of leaves. On the contrary, if one would like to limit the complexity of his decision tree, he may just choose a reasonably small number as the limit. \\
+\\
+For the selection of this parameter, I choose max number equals 21 and the test accuracy is 84.40\%. The testing accuracy is actually very close to training and validation accuracy, which indicates that overfitting does not happen here.
+
+\subsection{Boosting}
+Ada boosting is used as boosting algorithm here. The hyperparameter I choose here is the number of estimators. From Fig.\ref{fig:adult_ada}, we can see that the training accuracy and validation accuracy both increase as the number of estimators increase. However, if we look at the data, the accuracy only increase in a small number. 
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./adult/ada_num_estimator.jpg}
+  \caption{Accuracy with Different Number of Estimators}
+  \label{fig:adult_ada}
+\end{figure}
+We may conclude that the number of estimator does not have great influence on the algorithm but it is a good way to increase the accuracy after it reaches a high value.
+
+\subsection{Support Vector Machine}
+For support vector machine, I use four different kernel functions: poly, linear, rbf and sigmoid. The performace of each kernel function is shown in Fig.\ref{fig:adult_svm}. It is clear that rbf function is the best one among those four and sigmoid is the worst one. An interesting thing is that the gap between training accuracy and validation accuracy is very samll for all of these four algorithms.
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./adult/svm_kernel.jpg}
+  \caption{Accuracy Using Different Kernel Function}
+  \label{fig:adult_svm}
+\end{figure}
+I would say that support vector machine is a good algorithm because it seems overfiting may not happen.\\
+\\
+Using rbf as kernel function and the test accuracy is 83.22\%.
+
+\subsection{Neural Network}
+Neural network has many hyperparameters. I test on the number of hidden layers and fix other hyperparameters. From Fig\ref{fig:adult_nn}, it is clear that the accuracy of neural network is not stable. It first decreases as number of layers goes up and then increases. The best accuracy is attained when there are 19 hidden layers of neural network. 
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./adult/nn_num_layer.jpg}
+  \caption{Accuracy with Different Number of Layers}
+  \label{fig:adult_nn}
+\end{figure}
+It looks strange for me as the trend of accuracy with regard to the number of hidden layers is not consistent. Neural network seems to be a black box for me as I really don't know what happens inside the hidden neurons. \\
+\\The only thing I can tell is that the test accuracy for neural network with 19 hidden layers is 78.86\%. It is not bad compared with other algorithms.
+
+\subsection{Summary}
+Table.\ref{tab:adult} shows the performance of different algorithms on test data. Decision tree seems to be the best algorithm for adult data and neural network does not work as well as other algorithms. At my first sight, it is contradictory to my experience that neural network is used broadly and has get excellent result. I think the point is that this dataset is a trivial one. The dimensions and size of the dataset is not complicated and traditional machine learning algorithms can handle this problem well.
+\begin{table}[h!]
+  \begin{center}
+    \caption{Performance of Algorithms}
+    \label{tab:adult}
+    \begin{tabular}{l|c}
+      \textbf{Algorithm} & \textbf{Testing Accuracy}\\
+      \hline
+      KNN & 79.47\%\\
+      Decision Tree & 84.40\%\\
+      Boosting & 82.34\%\\
+      SVM & 83.23\% \\
+      Neural Network & 78.86\%\\
+    \end{tabular}
+  \end{center}
+\end{table}
+As far as I know, neural network needs large scale data to get trained and the hyperparameters need to be set up correctly in order to have faster training speed and better accuracy. For this training set, neural network can get a good testing accuracy, but not the best. Other traditional machine learning algorithms work even better.  
 \section{Wine Dataset Classification and Result}
 \subsection{K Nearest Neighbor}
+Based on Fig.\ref{fig:wine_knn}
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./wine/knn_k.jpg}
+  \caption{Accuracy with Different k}
+  \label{fig:wine_knn}
+\end{figure}
 \subsection{Decision Tree}
+Based on Fig.\ref{fig:wine_dt}
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./wine/dt_maxleaf.jpg}
+  \caption{Accuracy with Different Max Number of Leaves}
+  \label{fig:wine_dt}
+\end{figure}
 \subsection{Boosting}
+Based on Fig.\ref{fig:wine_ada}
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./wine/ada_num_estimator.jpg}
+  \caption{Accuracy with Different Number of Estimators}
+  \label{fig:wine_ada}
+\end{figure}
 \subsection{Support Vector Machine}
+Based on Fig.\ref{fig:wine_svm}
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./wine/svm_kernel.jpg}
+  \caption{Accuracy Using Different Kernel Function}
+  \label{fig:wine_svm}
+\end{figure}
 \subsection{Neural Network}
+Based on Fig.\ref{fig:wine_nn}
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./wine/nn_num_layer.jpg}
+  \caption{Accuracy with Different NUmber of Layers}
+  \label{fig:wine_nn}
+\end{figure}
 \subsection{Summary}
 
 
 \section{Influence of Size}
-
-%\begin{figure}
-%  \includegraphics[width=\linewidth]{runtime_N.png}
-%  \caption{Different N with same P}
-%  \label{diff_n}
-%\end{figure}
 
 
 \end{document}
