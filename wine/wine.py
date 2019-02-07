@@ -144,7 +144,7 @@ def nn(trainX, trainY, testX, testY):
 		scores.append(accuracy)
 	maxScore = max(scores)
 	index = scores.index(maxScore)
-	print("Neural Network accuracy: %f with %d layer" %(accuracy, index*2+5))
+	print("Neural Network accuracy: %f with %d layer" %(maxScore, index*2+5))
 	x = range(5,27,2)
 	plt.figure(figsize=(8,4))
 	axes = plt.gca()

@@ -97,44 +97,68 @@ Table.\ref{tab:adult} shows the performance of different algorithms on test data
 As far as I know, neural network needs large scale data to get trained and the hyperparameters need to be set up correctly in order to have faster training speed and better accuracy. For this training set, neural network can get a good testing accuracy, but not the best. Other traditional machine learning algorithms work even better.  
 \section{Wine Dataset Classification and Result}
 \subsection{K Nearest Neighbor}
-Based on Fig.\ref{fig:wine_knn}
+Based on Fig.\ref{fig:wine_knn}, we can see that training score first decreases and then is somehow stable and the trend of validation score goes similarly. 
 \begin{figure}[h!]
   \includegraphics[width=\linewidth]{./wine/knn_k.jpg}
   \caption{Accuracy with Different k}
   \label{fig:wine_knn}
-\end{figure}
+\end{figure}\\
+The behavior of k nearest neighbor on wine dataset is different from that on adult dataset. For adult dataset, the validation score at the beginning is very low and increases afterwards. For my point of view, this is because wine dataset only contains a small number of data. I believe the overfitting happens while the validation set cannot show since the size of dataset is so small.
 \subsection{Decision Tree}
-Based on Fig.\ref{fig:wine_dt}
+Based on Fig.\ref{fig:wine_dt}, we can see the training accuracy reaches 100\% after max number of leaves is greater than 9! This indicates that the decision tree is fully built and the accuracy of validation set also supports it because the validation accuracy is extremely high and reaches around 97\%.
 \begin{figure}[h!]
   \includegraphics[width=\linewidth]{./wine/dt_maxleaf.jpg}
   \caption{Accuracy with Different Max Number of Leaves}
   \label{fig:wine_dt}
-\end{figure}
+\end{figure}\\
+The high accuracy indicates that decision tree algorithm may be extremely helpful when the problem space is not very large. The tree can even be fully obtained and the accuracy can be very high.
+
 \subsection{Boosting}
-Based on Fig.\ref{fig:wine_ada}
+It is strange for me that changing number of estimators does not change the training and validation accuracy. The line is shown on Fig.\ref{fig:wine_ada}. In my point of view, this supports my previous argue that the problem space is small and a decision tree can be fully obtained even without boosting. Also, the fact that the problem space is small supports the result of experiment. There would be no improvement between different number of estimators.
 \begin{figure}[h!]
   \includegraphics[width=\linewidth]{./wine/ada_num_estimator.jpg}
   \caption{Accuracy with Different Number of Estimators}
   \label{fig:wine_ada}
-\end{figure}
+\end{figure}\\
 \subsection{Support Vector Machine}
-Based on Fig.\ref{fig:wine_svm}
+Again, support vector machine works well on wine dataset. Sigmoid kernel function even reach 100\% accuracy. Other kernel functions also have accuracy at around 97\%, which is as good as a fully obtained decision tree. Perhaps this is because different kinds of wines actually differs a lot in some properties and the support vector machine can successfully partition them easily. Imagine that the three types of wines are distributed among the space sparsely while the data points representing same kinds of wines are aggregated together. Then it is easy for a support vector machine to do classification.
 \begin{figure}[h!]
   \includegraphics[width=\linewidth]{./wine/svm_kernel.jpg}
   \caption{Accuracy Using Different Kernel Function}
   \label{fig:wine_svm}
-\end{figure}
-\subsection{Neural Network}
-Based on Fig.\ref{fig:wine_nn}
+\end{figure}\\
 \begin{figure}[h!]
   \includegraphics[width=\linewidth]{./wine/nn_num_layer.jpg}
-  \caption{Accuracy with Different NUmber of Layers}
+  \caption{Accuracy with Different Number of Hidden Layers}
   \label{fig:wine_nn}
 \end{figure}
+\subsection{Neural Network}
+Fig.\ref{fig:wine_nn} shows the accuracy with different number of hidden layers and each layer has 30 neurons. Unlike other algorithms, the performance of neural network is really bad on wine dataset. Considering the fact that random guess can reach 33.3\% accuracy, when hidden layers equals to some numbers, neural network behaves like a disaster. But this is actually what I expected. Since there are only 178 instances in total and I have to do cross validation, the size of training data may be only 130. The size of training data is so small for a neural network to be successfully trained. If we can find more training data and feed it to neural network, I believe that the accuracy can be much better than the current one. 
 \subsection{Summary}
-
+Table.\ref{tab:wine} shows the performance of different algorithms on test data. Decision tree and support vector machine seems to be the best algorithm for wine data and neural network does not work as well as other algorithms. I can see that the performance of a machine learning algorithm is greatly related with the dataset. For adult data, the performance of neural network is acceptable while for wine data, neural network is much worse than traditional algorithms. The data size does influence the performance of different algorithms.
+\begin{table}[h!]
+  \begin{center}
+    \caption{Performance of Algorithms}
+    \label{tab:wine}
+    \begin{tabular}{l|c}
+      \textbf{Algorithm} & \textbf{Testing Accuracy}\\
+      \hline
+      KNN & 80.56\%\\
+      Decision Tree & 97.22\%\\
+      Boosting & 86.11\%\\
+      SVM & 100.0\% \\
+      Neural Network & 56.18\%\\
+    \end{tabular}
+  \end{center}
+\end{table}
 
 \section{Influence of Size}
-
+For adult dataset, I will partition the dataset into training set and validation set with different factors and see how the size of training data influence the behavior of different algorithms. I do not do so for wine dataset since wine dataset only contains 178 instances and I believe it is meaningless to do so.
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{./adult/compare.jpg}
+  \caption{Accuracy with Different Cross Validation Factor}
+  \label{fig:compare}
+\end{figure}\\
+Fig.\ref{fig:compare} shows the change. We may conclude that decision tree and support vector machine is stable with decreasing size of training set while the accuracy of other algorithms are slightly influenced.
 
 \end{document}
