@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.25)  6 FEB 2019 22:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.25)  7 FEB 2019 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -693,69 +693,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--79
 
 [4 <./adult/ada_num_estimator.jpg>] [5 <./adult/svm_kernel.jpg> <./adult/nn_num
 _layer.jpg>]
-<./wine/knn_k.jpg, id=125, 578.16pt x 289.08pt>
-File: ./wine/knn_k.jpg Graphic file (type jpg)
-<use ./wine/knn_k.jpg>
-Package pdftex.def Info: ./wine/knn_k.jpg  used on input line 102.
-(pdftex.def)             Requested size: 360.0pt x 179.99966pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6]
-<./wine/dt_maxleaf.jpg, id=134, 578.16pt x 289.08pt>
-File: ./wine/dt_maxleaf.jpg Graphic file (type jpg)
-<use ./wine/dt_maxleaf.jpg>
-Package pdftex.def Info: ./wine/dt_maxleaf.jpg  used on input line 110.
-(pdftex.def)             Requested size: 360.0pt x 179.99966pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./wine/ada_num_estimator.jpg, id=136, 578.16pt x 289.08pt>
-File: ./wine/ada_num_estimator.jpg Graphic file (type jpg)
-<use ./wine/ada_num_estimator.jpg>
-Package pdftex.def Info: ./wine/ada_num_estimator.jpg  used on input line 119.
-(pdftex.def)             Requested size: 360.0pt x 179.99966pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--123
+Underfull \hbox (badness 10000) in paragraph at lines 81--100
 
  []
 
+<./wine/knn_k.jpg, id=125, 578.16pt x 289.08pt>
+File: ./wine/knn_k.jpg Graphic file (type jpg)
+<use ./wine/knn_k.jpg>
+Package pdftex.def Info: ./wine/knn_k.jpg  used on input line 104.
+(pdftex.def)             Requested size: 360.0pt x 179.99966pt.
+[6]
+<./wine/dt_maxleaf.jpg, id=133, 578.16pt x 289.08pt>
+File: ./wine/dt_maxleaf.jpg Graphic file (type jpg)
+<use ./wine/dt_maxleaf.jpg>
+Package pdftex.def Info: ./wine/dt_maxleaf.jpg  used on input line 112.
+(pdftex.def)             Requested size: 360.0pt x 179.99966pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./wine/svm_kernel.jpg, id=137, 578.16pt x 289.08pt>
+<./wine/ada_num_estimator.jpg, id=135, 578.16pt x 289.08pt>
+File: ./wine/ada_num_estimator.jpg Graphic file (type jpg)
+<use ./wine/ada_num_estimator.jpg>
+Package pdftex.def Info: ./wine/ada_num_estimator.jpg  used on input line 121.
+(pdftex.def)             Requested size: 360.0pt x 179.99966pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--125
+
+ []
+
+[7 <./wine/knn_k.jpg>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./wine/svm_kernel.jpg, id=143, 578.16pt x 289.08pt>
 File: ./wine/svm_kernel.jpg Graphic file (type jpg)
 <use ./wine/svm_kernel.jpg>
-Package pdftex.def Info: ./wine/svm_kernel.jpg  used on input line 126.
+Package pdftex.def Info: ./wine/svm_kernel.jpg  used on input line 128.
 (pdftex.def)             Requested size: 360.0pt x 179.99966pt.
-<./wine/nn_num_layer.jpg, id=138, 578.16pt x 289.08pt>
+<./wine/nn_num_layer.jpg, id=144, 578.16pt x 289.08pt>
 File: ./wine/nn_num_layer.jpg Graphic file (type jpg)
 <use ./wine/nn_num_layer.jpg>
-Package pdftex.def Info: ./wine/nn_num_layer.jpg  used on input line 131.
+Package pdftex.def Info: ./wine/nn_num_layer.jpg  used on input line 133.
 (pdftex.def)             Requested size: 360.0pt x 179.99966pt.
-[7 <./wine/knn_k.jpg>] [8 <./wine/dt_maxleaf.jpg> <./wine/ada_num_estimator.jpg
->] [9 <./wine/svm_kernel.jpg> <./wine/nn_num_layer.jpg>]
-<./adult/compare.jpg, id=159, 578.16pt x 289.08pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <./wine/dt_maxleaf.jpg>] [9 <./wine/ada_num_estimator.jpg> <./wine/svm_kerne
+l.jpg>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10 <./wine/nn_num_layer.jpg>]
+<./adult/compare.jpg, id=164, 578.16pt x 289.08pt>
 File: ./adult/compare.jpg Graphic file (type jpg)
 <use ./adult/compare.jpg>
-Package pdftex.def Info: ./adult/compare.jpg  used on input line 158.
+Package pdftex.def Info: ./adult/compare.jpg  used on input line 161.
 (pdftex.def)             Requested size: 360.0pt x 179.99966pt.
- [10] [11 <./adult/compare.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
+ [11 <./adult/compare.jpg>] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: FDE498E9BFBD9E672C6B7BA4A17E8969;1170.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
  ) 
 Here is how much of TeX's memory you used:
- 17352 strings out of 492982
- 319537 string characters out of 6134896
- 383187 words of memory out of 5000000
+ 17353 strings out of 492982
+ 319544 string characters out of 6134896
+ 383188 words of memory out of 5000000
  20585 multiletter control sequences out of 15000+600000
  11776 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -765,10 +776,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on report.pdf (11 pages, 549980 bytes).
+Output written on report.pdf (12 pages, 553151 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
  220 words of extra memory for PDF output out of 10000 (max. 10000000)
 

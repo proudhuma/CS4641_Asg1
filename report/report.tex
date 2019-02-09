@@ -94,7 +94,9 @@ Table.\ref{tab:adult} shows the performance of different algorithms on test data
     \end{tabular}
   \end{center}
 \end{table}
-As far as I know, neural network needs large scale data to get trained and the hyperparameters need to be set up correctly in order to have faster training speed and better accuracy. For this training set, neural network can get a good testing accuracy, but not the best. Other traditional machine learning algorithms work even better.  
+As far as I know, neural network needs large scale data to get trained and the hyperparameters need to be set up correctly in order to have faster training speed and better accuracy. For this training set, neural network can get a good testing accuracy, but not the best. Other traditional machine learning algorithms work even better.\\
+\\
+For the running time of the algorithm, support vector machine takes the longest time, followed by neural network. Then comes k nearest neighbor and other two algorithms runs almost the same time. Boosting runs slightly faster. I do expect that neural network would take long time to train while I did not expect support vector machine to take that much time. The reason may be that the data is complicated and the computation for kernel function is expensive. The time of decision tree and boosting are close because boosting is just some accelaration of decision tree.
 \section{Wine Dataset Classification and Result}
 \subsection{K Nearest Neighbor}
 Based on Fig.\ref{fig:wine_knn}, we can see that training score first decreases and then is somehow stable and the trend of validation score goes similarly. 
@@ -135,7 +137,7 @@ Again, support vector machine works well on wine dataset. Sigmoid kernel functio
 \subsection{Neural Network}
 Fig.\ref{fig:wine_nn} shows the accuracy with different number of hidden layers and each layer has 30 neurons. Unlike other algorithms, the performance of neural network is really bad on wine dataset. Considering the fact that random guess can reach 33.3\% accuracy, when hidden layers equals to some numbers, neural network behaves like a disaster. But this is actually what I expected. Since there are only 178 instances in total and I have to do cross validation, the size of training data may be only 130. The size of training data is so small for a neural network to be successfully trained. If we can find more training data and feed it to neural network, I believe that the accuracy can be much better than the current one. 
 \subsection{Summary}
-Table.\ref{tab:wine} shows the performance of different algorithms on test data. Decision tree and support vector machine seems to be the best algorithm for wine data and neural network does not work as well as other algorithms. I can see that the performance of a machine learning algorithm is greatly related with the dataset. For adult data, the performance of neural network is acceptable while for wine data, neural network is much worse than traditional algorithms. The data size does influence the performance of different algorithms.
+Table.\ref{tab:wine} shows the performance of different algorithms on test data. Decision tree and support vector machine seems to be the best algorithm for wine data and neural network does not work as well as other algorithms. Boosting and decision tree have the same accuracy because the tree can be fully obtained even without any boosting. From the accuracy of neural network, I can see that the performance of a machine learning algorithm is greatly related with the dataset. For adult data, the performance of neural network is acceptable while for wine data, neural network is much worse than traditional algorithms. The data size does influence the performance of different algorithms.\\
 \begin{table}[h!]
   \begin{center}
     \caption{Performance of Algorithms}
@@ -145,12 +147,13 @@ Table.\ref{tab:wine} shows the performance of different algorithms on test data.
       \hline
       KNN & 80.56\%\\
       Decision Tree & 97.22\%\\
-      Boosting & 86.11\%\\
+      Boosting & 97.22\%\\
       SVM & 100.0\% \\
-      Neural Network & 56.18\%\\
+      Neural Network & 55.56\%\\
     \end{tabular}
   \end{center}
-\end{table}
+\end{table}\\
+As for the running time, k nearest neighbor is now the slowest one, followed by neural network and support vector machine. Decision tree and boosting are the fastest. For my thought, k nearest neighbor takes some computation time for computing the nearest neighbors and then voting. Since the wine dataset does not contain much instances, neural network and support vector machine is fast this time. Decision tree and boosting are still the fastest because the main cost for these two algorithms is generating the tree, which can be easily done for wine dataset.
 
 \section{Influence of Size}
 For adult dataset, I will partition the dataset into training set and validation set with different factors and see how the size of training data influence the behavior of different algorithms. I do not do so for wine dataset since wine dataset only contains 178 instances and I believe it is meaningless to do so.
@@ -159,6 +162,6 @@ For adult dataset, I will partition the dataset into training set and validation
   \caption{Accuracy with Different Cross Validation Factor}
   \label{fig:compare}
 \end{figure}\\
-Fig.\ref{fig:compare} shows the change. We may conclude that decision tree and support vector machine is stable with decreasing size of training set while the accuracy of other algorithms are slightly influenced.
+Fig.\ref{fig:compare} shows the change. We may conclude that decision tree and support vector machine is stable with decreasing size of training set while the accuracy of other algorithms are slightly influenced. It is clear that the accuracy for support vector machine even does not change. I believe it is because the data points are uniformly distributed. By "uniform" I mean that the data is spreaded among the space and decrease the size almost has no influence.
 
 \end{document}
